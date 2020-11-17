@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" 
+targetNamespace="http://www.example.org/order" 
+xmlns:tns="http://www.example.org/order" 
+elementFormDefault="qualified">
+
+
+    <element name="order" type="tns:order"></element>
+    
+
+    <complexType name="order">
+    	<sequence>
+    		<element name="orderId" type="tns:Int" maxOccurs="1"
+    			minOccurs="1">
+    		</element>
+    		<element name="customerName" type="string" maxOccurs="1"
+    			minOccurs="1">
+    		</element>
+    		<element name="customerAddress" type="string"
+    			maxOccurs="unbounded" minOccurs="1">
+    		</element>
+    		<element name="orderItem" type="tns:orderItem"></element>
+    	</sequence>
+    </complexType>
+
+
+    <complexType name="Int"></complexType>
+
+    <complexType name="orderItem">
+    	<sequence>
+    		<element name="itemName" type="string"></element>
+    		<element name="itemPrice" type="tns:doubl"></element>
+    		<element name="itemDiscount" type="tns:double"></element>
+    		<element name="itemManfDate" type="tns:date"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="date"></complexType>
+
+    <complexType name="double"></complexType>
+
+    <complexType name="doubl"></complexType>
+</schema>
